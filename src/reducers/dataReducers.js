@@ -10,11 +10,12 @@ import {
   } from "../constant/dataConstant";
   
   export const BlogReducer = (state = { Blog: [] }, action) => {
+      console.log(action);
     switch (action.type) {
       case ALL_BLOG_REQUEST:
         return {
           loading: true,
-          articles: [],
+          BlogAll: [],
         };
       case ALL_BLOG_SUCCESS:
         return {
