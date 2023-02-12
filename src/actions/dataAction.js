@@ -39,7 +39,7 @@ export const getAllBlog = () => async(dispatch)=>{
     dispatch({type:ALL_BLOG_REQUEST});
     let link = `/api/v2/all/blog`;
     const {data} = await axios.get(link)
-    console.log(data);
+    console.log(data,"prince");
     dispatch({
       type:ALL_BLOG_SUCCESS,
       payload:data,
