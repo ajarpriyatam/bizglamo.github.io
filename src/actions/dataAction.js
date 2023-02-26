@@ -9,6 +9,8 @@ import {
   DETAILS_RESET,
   CLEAR_ERRORS,
 } from "../constant/dataConstant";
+ const domain = "https://bizglamoback-production.up.railway.app";
+ 
 
 export const addDetails = (details_Data) => async (dispatch) => {
   console.log(details_Data,"action")
@@ -18,7 +20,7 @@ export const addDetails = (details_Data) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
     };
     const { data } = await axios.post(
-      `/api/v2/send_details`,
+      `${domain}/api/v2/send_details`,
       details_Data,
       config
     );
@@ -37,7 +39,7 @@ export const addDetails = (details_Data) => async (dispatch) => {
 export const getAllBlog = () => async(dispatch)=>{
   try{
     dispatch({type:ALL_BLOG_REQUEST});
-    let link = `/api/v2/all/blog`;
+    let link = `${domain}/api/v2/all/blog`;
     const {data} = await axios.get(link)
     console.log(data,"prince");
     dispatch({
